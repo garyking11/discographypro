@@ -1,0 +1,52 @@
+<textarea id = "allImage" name = "allImage" ><?php echo $media['item1']; ?></textarea>
+<textarea id="allImageCaption" name="allImageCaption"><?php echo $media['item2']; ?></textarea>
+
+<?php
+$component_id = array($album['id'],$artist['id'], $studio['id'], $label['id']);
+    foreach ($component_id as $value) {
+
+        if ($media['item1'] != "") {
+            $image_items = $media['item1'];
+            $image_items = explode(',', $image_items);
+            $caption_items = $media['item2'];
+            $caption_items = explode(',', $caption_items);
+            $num_images = count($image_items);
+
+            for ($i = 0; $i < $num_images; $i++) {
+
+                $image = $image_items[$i];
+                $caption = $caption_items[$i];
+
+                echo '<div class="image-item ui-state-default">'
+                    . '<img class="thumbnail" name="selected-thumb" src="Site/Assets/Images/album/' . $value . '/' . $image . '" />'
+                    // Add a caption to the image
+                    . '<textarea class="image-caption" name="image-caption" maxlength="100">' . $caption . '</textarea>'
+                    . ' &nbsp;&nbsp;<a class="remove-image btn btn-danger btn-small">Remove</a>'
+                    . ' <input type="text" disabled="disabled" class="image warning" name="image" value="' . $image . '" /></div>';
+            } // end for
+        } // end if // else {}
+    } // end foreach
+?>
+
+
+<?php
+//show componenets in admin...
+
+$admin_config = array('images' => 'true', 'audio' => 'true', 'video' => 'false', 'address' => 'false');
+//echo "Associative array always output as object: ", json_encode($admin_config), "\n";
+echo $config = json_encode($admin_config);
+
+foreach ($admin_config as $key => $value) {
+    echo $key . ': ' .$value . '&nbsp;,';
+}
+
+
+$d = array('foo' => 'bar', 'baz' => 'long');
+
+//echo "Associative array always output as object: ", json_encode($d), "\n";
+//echo "Associative array always output as object: ", json_decode($d), "\n";
+
+/*$config = count($admin_config);
+for  ($config = 1; $config > 1; $config++) {
+	echo $config;
+}*/?>

@@ -1,0 +1,12 @@
+{
+    "require": {
+        "heroicteam/m": "dev-master",
+        "j4mie/idiorm": "dev-master",
+        "torophp/torophp": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "app/controllers/"
+        ]
+    }
+}

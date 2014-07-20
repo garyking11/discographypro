@@ -1,0 +1,182 @@
+[
+    {
+        "name": "j4mie/idiorm",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/j4mie/idiorm.git",
+            "reference": "3be516b440734811b58bb9d0b458a4109b49af71"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/j4mie/idiorm/zipball/3be516b440734811b58bb9d0b458a4109b49af71",
+            "reference": "3be516b440734811b58bb9d0b458a4109b49af71",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "time": "2013-09-05 09:01:18",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "idiorm.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "BSD-4-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Simon Holywell",
+                "email": "treffynnon@php.net",
+                "homepage": "http://simonholywell.com",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Jamie Matthews",
+                "email": "jamie.matthews@gmail.com",
+                "homepage": "http://j4mie.org",
+                "role": "Developer"
+            },
+            {
+                "name": "Durham Hale",
+                "email": "me@durhamhale.com",
+                "homepage": "http://durhamhale.com",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "A lightweight nearly-zero-configuration object-relational mapper and fluent query builder for PHP5",
+        "homepage": "http://j4mie.github.com/idiormandparis",
+        "keywords": [
+            "idiorm",
+            "orm",
+            "query builder"
+        ]
+    },
+    {
+        "name": "torophp/torophp",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/anandkunal/ToroPHP.git",
+            "reference": "31d084bd5ccc015d8d9b7faaef22f0c2e470dcc1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/anandkunal/ToroPHP/zipball/31d084bd5ccc015d8d9b7faaef22f0c2e470dcc1",
+            "reference": "31d084bd5ccc015d8d9b7faaef22f0c2e470dcc1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2013-08-31 16:15:22",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/Toro.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Martin Bean",
+                "email": "martin@martinbean.co.uk",
+                "homepage": "http://www.martinbean.co.uk",
+                "role": "Developer"
+            },
+            {
+                "name": "Kunal Anand",
+                "email": "kunal.r.anand@gmail.com",
+                "homepage": "http://kunalanand.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Danillo César de O. Melo",
+                "email": "danillos@gmail.com",
+                "homepage": "http://www.danillocesar.com.br/",
+                "role": "Contributor"
+            },
+            {
+                "name": "Robbie Coleman",
+                "homepage": "http://robbie.robnrob.com",
+                "role": "Contributor"
+            },
+            {
+                "name": "Berker Peksag",
+                "homepage": "http://berkerpeksag.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Jason Mooberry",
+                "homepage": "http://jasonmooberry.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "John Kurkowski",
+                "role": "Contributor"
+            }
+        ],
+        "description": "Toro is a PHP router for developing RESTful web applications and APIs.",
+        "homepage": "http://github.com/anandkunal/ToroPHP",
+        "keywords": [
+            "framework",
+            "php",
+            "router"
+        ]
+    },
+    {
+        "name": "heroicteam/m",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/HeroicTeam/m.git",
+            "reference": "25fbba17e9410b9db0450c2e37833ae66a009731"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/HeroicTeam/m/zipball/25fbba17e9410b9db0450c2e37833ae66a009731",
+            "reference": "25fbba17e9410b9db0450c2e37833ae66a009731",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2013-09-13 20:01:53",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "m": ".."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nick Glenn",
+                "email": "hello@nick-glenn.com",
+                "homepage": "http://www.nick-glenn.com/"
+            }
+        ],
+        "description": "The m PHP micro framework.",
+        "homepage": "https://github.com/HeroicTeam/m",
+        "keywords": [
+            "microframework"
+        ]
+    }
+]

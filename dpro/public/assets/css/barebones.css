@@ -1,0 +1,898 @@
+/**
+ * Sesame Communications Responsive Boilerplate
+ * @author Nick Glenn <nglenn@sesamecommunications.com>
+ * @link http://wiki.sesamecommunications.com:8090/display/DT/Sesame+Responsive+Design+Boilerplate
+ * @version v1.1.3
+ * @package Barebones
+*/
+
+
+/* ===============================================
+   Normalized CSS
+   github.com/jonathantneal/normalize.css
+   =============================================== */
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {
+	display: block;
+	z-index: 1;
+	position: relative;
+}
+
+html {
+	cursor: default;
+	font-size: 100%;
+	overflow-y: scroll;
+	-webkit-tap-highlight-color: transparent;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body,form,input,button,select,textarea {
+	font-size: 100%;
+	margin: 0;
+}
+
+.zebra li:nth-child(2n+1) {
+	background-color: #eee;
+}
+
+a,a:active,a:hover {
+	outline: none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+abbr {
+	_border-bottom: expression(this.title?'1px dotted':'none');
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,strong {
+	font-weight: 700;
+}
+
+dfn {
+	font-style: italic;
+}
+
+mark {
+	background: #FF0;
+	color: #000;
+}
+
+pre,code,kbd,samp {
+	font-family: monospace,monospace;
+	_font-family: 'courier new',monospace;
+	font-size: 1em;
+}
+
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+q {
+	quotes: none;
+}
+
+q:before,q:after {
+	content: '';
+	content: none;
+}
+
+small,sub,sup {
+	font-size: 75%;
+}
+
+sub,sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -.5em;
+}
+
+sub {
+	bottom: -.25em;
+}
+
+nav ul {
+	list-style: none;
+}
+
+audio[controls],canvas,video {
+	display: inline-block;
+	display: inline;
+}
+
+audio {
+	display: none;
+	_display: expression(this.controls?'inline':'none');
+	zoom: 1;
+}
+
+audio[controls] {
+	display: inline-block;
+}
+
+img, a img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+legend {
+	margin-left: -7px;
+}
+
+button,input,select,textarea {
+	vertical-align: baseline;
+	vertical-align: middle;
+}
+
+button,input {
+	line-height: normal;
+	_overflow: expression(this.type=='button|reset|submit'?'visible':'');
+}
+
+button,input[type="button"],input[type="reset"],input[type="submit"] {
+	overflow: visible;
+	-webkit-appearance: button;
+}
+
+input[type="checkbox"],input[type="radio"] {
+	box-sizing: border-box;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ===============================================
+   Helper Classes
+   =============================================== */
+   
+/* Prevent callout */
+.nocallout {
+	-webkit-touch-callout: none;
+}
+
+.pressed {
+	background-color: rgba(0,0,0,0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+textarea[contenteditable] {
+	-webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+   they have been set as display: none */
+.gifhidden {
+	position: absolute;
+	left: -100%;
+}
+
+/* Image replacement */
+.ir {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	border: 0;
+	direction: ltr;
+	display: block;
+	overflow: hidden;
+	text-align: left;
+	text-indent: -999em;
+}
+
+.ir br {
+	display: none;
+}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+	border: 0;
+	clip: rect(0000);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+	visibility: hidden;
+}
+
+/* Clearfix helper: Used to contain floats: h5bp.com/q */
+.clearfix:before,.clearfix:after,.row:before,.row:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after,.row:after {
+	clear: both;
+}
+
+/* For IE 6/7 only: Include this rule to trigger hasLayout and contain floats. */
+.clearfix,.row {
+	zoom: 1;
+}
+
+
+/* Alignment, Position & Visibility */
+.block,.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.inline {
+	display: inline;
+}
+
+.alignleft {
+	text-align: left;
+}
+
+.alignright {
+	text-align: right;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.nostyling {
+	list-style: none;
+	padding: 0;
+}
+
+.nopadding {
+	padding: 0;
+}
+
+.nomargin {
+	margin: 0;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.left,.pull-left {
+	float: left;
+}
+
+.right,.pull-right {
+	float: right;
+}
+
+.img-left, .img-right, .img-center {
+	float: none;
+	margin: 2.5% auto;
+	clear: both;
+}
+
+.nofloat {
+	float: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.clearleft {
+	clear: left;
+}
+
+.clearright {
+	clear: right;
+}
+
+.noclear {
+	clear: none;
+}
+
+.nomax {
+	max-width: none;
+}
+
+.fill {
+	width: 100%;
+}
+
+.container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	width: 96% !important;
+	width: 960px;
+	max-width: 960px;
+}
+
+body > .container {
+	width: 100% !important;
+}
+
+/* ===============================================
+   Default / Base / Mobile Stylings
+   =============================================== */
+html, body, html body {
+	min-height: 100%;
+}
+
+html body {
+	min-width: 180px;
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+/* Typography */
+strong,.strong,.bold {
+	font-weight: 700;
+}
+
+em,.italic {
+	font-style: italic;
+}
+
+.lead {
+	margin-bottom: 1.6px;
+	font-size: 1.5em;
+	font-weight: 200;
+	line-height: 2.4000000000000004;
+}
+
+small {
+	font-size: .85em;
+}
+
+cite {
+	font-style: normal;
+}
+
+.muted {
+	color: #999;
+}
+
+a.muted:hover {
+	color: gray;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	margin: 0.5em 0;
+	font-family: inherit;
+	font-weight: 700;
+	line-height: 1.2;
+	color: inherit;
+	text-rendering: optimizelegibility;
+}
+
+h1 small,h2 small,h3 small,h4 small,h5 small,h6 small {
+	font-weight: 400;
+	line-height: 1;
+	color: #999;
+}
+
+h1 {
+	font-size: 2.75em;
+}
+
+h2 {
+	font-size: 2.25em;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: .85em;
+}
+
+h1 small {
+	font-size: 1.75em;
+}
+
+h2 small {
+	font-size: 1.25em;
+}
+
+h3 small {
+	font-size: 1em;
+}
+
+h4 small {
+	font-size: 1em;
+}
+
+/* Paragraphs, Abbreviations, Addresses, Pre and Code Blocks */
+p {
+	margin: 0 0 1.8em;
+	padding: 0;
+}
+
+address {
+	display: block;
+	margin-bottom: 1.6px;
+	font-style: normal;
+	line-height: 1.6;
+}
+
+/* Horizontal Rule */
+hr {
+	border: 0;
+	background: none;
+	outline: 0;
+	height: 1px;
+	margin: 2px 0;
+	background-color: #ddd;
+	clear: both;
+}
+
+/* Responsive Media */
+.embed-container {
+	position: relative;
+	padding-bottom: 75%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.embed-container.16x9 {
+	padding-bottom: 56.25%;
+}
+
+.embed-container iframe,.embed-container object,.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Lists */
+ul,ol {
+	padding: 0;
+	margin: 0 0 1.8em 25px;
+}
+
+ul ul,ul ol,ol ol,ol ul {
+	margin-bottom: 0;
+}
+
+li {
+	line-height: 1.6;
+}
+
+ul.unstyled,ol.unstyled {
+	margin-left: 0;
+	list-style: none;
+}
+
+ul.inline,ol.inline {
+	margin-left: 0;
+	list-style: none;
+}
+
+ul.inline > li,ol.inline > li {
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+dl {
+	margin-bottom: 1.6px;
+}
+
+dt,dd {
+	line-height: 1.6;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin-left: .8em;
+}
+
+.dl-horizontal {
+	zoom: 1;
+}
+
+.dl-horizontal:before,.dl-horizontal:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+
+.dl-horizontal:after {
+	clear: both;
+}
+
+.dl-horizontal dt {
+	float: left;
+	width: 160px;
+	clear: left;
+	text-align: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.dl-horizontal dd {
+	margin-left: 180px;
+}
+
+/* ===============================================
+   Mobile Only Stylings
+   Supports up to 47.9375em (767px)
+   =============================================== */
+
+@media only screen and (max-width: 47.9375em) {
+	.show-mob, .showmob, .showmobile {
+		display: block !important;
+	}
+	
+	.hide-mob, .hidemob, .hidemobile, .no-mob, .nomob {
+		display: none !important;
+	}
+	
+	.mob-inline-block {
+		display: inline-block !important;
+	}
+	
+	.mob-inline {
+		display: inline !important;
+	}
+	
+	.mob-alignleft {
+		text-align: left;
+	}
+	
+	.mob-alignright {
+		text-align: right;
+	}
+	
+	.mob-aligncenter {
+		text-align: center;
+	}
+	
+	.mob-nostyling {
+		list-style: none;
+		padding: 0;
+	}
+	
+	.mob-nopadding {
+		padding: 0;
+	}
+	
+	.mob-nomargin {
+		margin: 0;
+	}
+	
+	.mob-left {
+		float: left;
+	}
+	
+	.mob-right {
+		float: right;
+	}
+	
+	.mob-nofloat, .mobnofloat {
+		float: none;
+	}
+	
+	.mob-clear {
+		clear: both;
+	}
+	
+	.mob-clearleft {
+		clear: left;
+	}
+	
+	.mob-clearright {
+		clear: right;
+	}
+	
+	.mob-noclear {
+		clear: none;
+	}
+	
+	.mob-nomax {
+		max-width: none;
+	}
+	
+	.mob-fill {
+		width: 100%;
+	}
+}
+
+/* ===============================================
+   Tablet / Desktop Stylings
+   Supports 48em (768px) and up
+   =============================================== */
+
+@media only screen and (min-width: 48em) {
+	.affix {
+		position: fixed;
+	}
+	
+	.img-left {
+		float: left;
+		margin: 0 2.5% 2.5% 0;
+		clear: left;
+	}
+	
+	.img-right {
+		float: right;
+		margin: 0 0 2.5% 2.5%;
+		clear: right;
+	}
+}
+
+/* ===============================================
+   Tablet Only Stylings
+   Supports 48em (768px) up to 63.9375em (1023px)
+   =============================================== */
+
+@media only screen and (min-width: 48em) and (max-width: 63.9375em) {
+	.tab-affix {
+		position: fixed;
+	}
+	
+	.show-tab, .showtab, .showtablet {
+		display: block !important;
+	}
+	
+	.hide-tab, .hidetab, .hidetablet {
+		display: none !important;
+	}
+	
+	.tab-inline-block {
+		display: inline-block !important;
+	}
+	
+	.tab-inline {
+		display: inline !important;
+	}
+	
+	.tab-alignleft {
+		text-align: left;
+	}
+	
+	.tab-alignright {
+		text-align: right;
+	}
+	
+	.tab-aligncenter {
+		text-align: center;
+	}
+	
+	.tab-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.tab-nostyling {
+		list-style: none;
+		padding: 0;
+	}
+	
+	.tab-nopadding {
+		padding: 0;
+	}
+	
+	.tab-nomargin {
+		margin: 0;
+	}
+	
+	.tab-left {
+		float: left;
+	}
+	
+	.tab-right {
+		float: right;
+	}
+	
+	.tab-nofloat, .tabnofloat {
+		float: none;
+	}
+	
+	.tab-clear {
+		clear: both;
+	}
+	
+	.tab-clearleft {
+		clear: left;
+	}
+	
+	.tab-clearright {
+		clear: right;
+	}
+	
+	.tab-noclear {
+		clear: none;
+	}
+	
+	.tab-nomax {
+		max-width: none;
+	}
+	
+	.tab-fill {
+		width: 100%;
+	}	
+}
+
+/* ===============================================
+   Desktop Only Stylings
+   Supports 64em (1024px) and up
+   =============================================== */
+
+@media only screen and (min-width: 64em) {
+	.desk-affix {
+		position: fixed;
+	}
+	
+	.show-desk, .showdesk, .showdesktop {
+		display: block !important;
+	}
+	
+	.hide-desk, .hidedesk, .hidedesktop {
+		display: none !important;
+	}
+	
+	.desk-inline-block {
+		display: inline-block !important;
+	}
+	
+	.desk-inline {
+		display: inline !important;
+	}
+	
+	.desk-alignleft {
+		text-align: left;
+	}
+	
+	.desk-alignright {
+		text-align: right;
+	}
+	
+	.desk-aligncenter {
+		text-align: center;
+	}
+	
+	.desk-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.desk-nostyling {
+		list-style: none;
+		padding: 0;
+	}
+	
+	.desk-nopadding {
+		padding: 0;
+	}
+	
+	.desk-nomargin {
+		margin: 0;
+	}
+	
+	.desk-left {
+		float: left;
+	}
+	
+	.desk-right {
+		float: right;
+	}
+	
+	.desk-nofloat, .desknofloat {
+		float: none;
+	}
+	
+	.desk-clear {
+		clear: both;
+	}
+	
+	.desk-clearleft {
+		clear: left;
+	}
+	
+	.desk-clearright {
+		clear: right;
+	}
+	
+	.desk-noclear {
+		clear: none;
+	}
+	
+	.desk-nomax {
+		max-width: none;
+	}
+	
+	.desk-fill {
+		width: 100%;
+	}
+ 
+}
